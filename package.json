@@ -1,0 +1,19 @@
+{
+  "name": "features",
+  "version": "1.0.0",
+  "description": "UI app of the features software",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salomari1987/features-client.git"
+  },
+  "author": "Salah Alomari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Salomari1987/features-client/issues"
+  },
+  "homepage": "https://github.com/Salomari1987/features-client#readme"
+}
