@@ -2,9 +2,9 @@ import React from 'react';
 import {Link} from 'react-router';
 
 class Navigation extends React.Component {
-	render() {
-		return (
-			<nav>
+  render() {
+    return (
+      <nav>
 				<ul>
 					<li><Link to='/'> Home </Link></li>
 					<li><Link to='/login'> Login </Link></li>
@@ -12,8 +12,9 @@ class Navigation extends React.Component {
 					<li><Link to='/Admin'> Admin </Link></li>
 				</ul>
 			</nav>
-		)
-	}
+    );
+  }
 }
 
 export default Navigation;
+
