@@ -16,7 +16,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var production = process.env.NODE_ENV === 'production';
 
 var dependencies = [
-  'alt',
+  'flux',
   'react',
   'react-dom',
   'react-router',

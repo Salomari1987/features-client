@@ -22,22 +22,27 @@
   },
   "homepage": "https://github.com/Salomari1987/features-client#readme",
   "babel": {
-    "presets": ["es2015", "react"]
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "dependencies": {
-    "alt": "^0.17.8",
-    "body-parser": "^1.14.1",
-    "compression": "^1.6.0",
-    "express": "^4.13.3",
-    "history": "^1.13.0",
-    "morgan": "^1.6.1",
-    "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
-    "react-addons-transition-group": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router": "^1.0.0",
-    "request": "^2.65.0",
-    "serve-favicon": "^2.3.0",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "compression": "^1.6.2",
+    "express": "^4.15.3",
+    "flux": "^3.1.2",
+    "history": "^1.17.0",
+    "keymirror": "^0.1.1",
+    "morgan": "^1.8.1",
+    "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.5.4",
+    "react-router": "^1.0.3",
+    "request": "^2.81.0",
+    "serve-favicon": "^2.4.3",
+    "superagent": "^3.5.2",
     "swig": "^1.4.2"
   },
   "devDependencies": {
