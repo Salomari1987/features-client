@@ -33,7 +33,9 @@ class Login extends React.Component {
 
   onChange() {
     if (AuthStore.isAuthenticated()) {
-      this.props.history.pushState(null, '/register')
+      this.props.history.pushState(null, '/');
+    } else if (AuthStore._errors) {
+      this.setState({errors: AuthStore._errors});
     }
   }
 
@@ -48,13 +50,13 @@ class Login extends React.Component {
     } else {
       return 'error';
     }
-  };
+  }
 
   updateField(fieldName, event) {
     var obj = {};
     obj[fieldName] = event.target.value;
-    this.setState(obj)
-  };
+    this.setState(obj);
+  }
 
   handleAlertDismiss() {
     this.setState({alertVisible: false});
@@ -86,7 +88,7 @@ class Login extends React.Component {
     return (
       <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
         <FieldGroup
-          validationState={this.getValidationState(this.state["username"])}
+          validationState={this.getValidationState(this.state['username'])}
           fieldID='username'
           fieldLabel='Username'
           helpBlock='Username is required'
@@ -100,7 +102,7 @@ class Login extends React.Component {
           onChange={this.updateField.bind(this, 'username')}
         />
         <FieldGroup
-          validationState={this.getValidationState(this.state["password"])}
+          validationState={this.getValidationState(this.state['password'])}
           fieldID='password'
           fieldLabel='Password'
           helpBlock='Password is required'
@@ -115,7 +117,7 @@ class Login extends React.Component {
         />
         <FormGroup>
           <Col smOffset={this.state.offset + 2} sm={8}>
-            <Button type="submit">
+            <Button type='submit'>
               Login
             </Button>
             <span> you do not have an account? <Link to='/register'> Register </Link> </span>

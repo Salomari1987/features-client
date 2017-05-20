@@ -8,8 +8,9 @@ class HeaderComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      authenticated: AuthStore.isAuthenticated()
-    }
+      authenticated: AuthStore.isAuthenticated(),
+      username: AuthStore.getUser()
+    };
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -20,24 +21,27 @@ class HeaderComponent extends React.Component {
   }
 
   onChange() {
-    this.setState({authenticated: AuthStore.isAuthenticated()})
+    this.setState({
+      authenticated: AuthStore.isAuthenticated(),
+      username: AuthStore.getUser()
+    });
   }
 
-	login() {
+  login() {
     this.props.history.pushState(null, '/login');
   }
 
   logout() {
-		AuthActions.logUserOut();
+    AuthActions.logUserOut();
     this.props.history.pushState(null, '/');
   }
 
-	render() {
+  render() {
     return (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Features</a>
+            <a href="/">Features</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
@@ -46,6 +50,9 @@ class HeaderComponent extends React.Component {
           ) : (
             <NavItem onClick={this.logout}>Logout</NavItem>
           )}
+          { this.state.username ? (
+            <Navbar.Text>Welcome {this.state.username} !</Navbar.Text>
+          ) : (null)}
         </Nav>
       </Navbar>
     );
