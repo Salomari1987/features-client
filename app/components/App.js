@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header history={this.props.history}/>
         <Grid>
           <Row>
             <Col xs={12} md={3}>

@@ -1,24 +1,35 @@
 import React from 'react';
 import { Nav, Navbar, NavItem, Header, Brand } from 'react-bootstrap';
+import AuthStore from '../stores/AuthStore';
+import AuthActions from '../actions/AuthActions';
+
 
 class HeaderComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      authenticated: false
+      authenticated: AuthStore.isAuthenticated()
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount() {
+    AuthStore.addChangeListener(this.onChange);
+  }
+
+  onChange() {
+    this.setState({authenticated: AuthStore.isAuthenticated()})
   }
 
 	login() {
-		// AuthActions.logUserIn();
-		this.setState({authenticated: true});
+    this.props.history.pushState(null, '/login');
   }
 
   logout() {
-		// AuthActions.logUserOut();
-    this.setState({authenticated: false});
+		AuthActions.logUserOut();
+    this.props.history.pushState(null, '/');
   }
 
 	render() {
