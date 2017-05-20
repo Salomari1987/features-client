@@ -1,14 +1,14 @@
 import React from 'react';
-import {Route} from 'react-router';
-import App from './containers/App.js';
-import Home from './containers/Home.js';
-import Login from './containers/Login.js';
-import Register from './containers/Register.js';
-import Admin from './containers/Admin.js';
+import {Route, IndexRoute} from 'react-router';
+import App from './components/App.js';
+import Home from './components/Home.js';
+import Login from './components/Login.js';
+import Register from './components/Register.js';
+import Admin from './components/Admin.js';
 
 export default (
-  <Route component={App}>
-    <Route path='/' component={Home} />
+  <Route path='/' component={App}>
+    <IndexRoute component={Home} />
     <Route path='/login' component={Login} />
     <Route path='/register' component={Register} />
     <Route path='/admin' component={Admin} />
